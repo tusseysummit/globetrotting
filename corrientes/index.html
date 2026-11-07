@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Corrientes Rides</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: one narrow column, a ledger of trips; each row is a link to that trip's map. */
+:root{
+  --bg:#f3ebe1; --panel:#fbf7f2; --ink:#2a1d17; --muted:#7b665a; --line:#e2d4c5; --accent:#b4471f;
+  --display:"Bricolage Grotesque",ui-sans-serif,system-ui,sans-serif;
+  --body:"IBM Plex Sans",ui-sans-serif,system-ui,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){:root{--bg:#17131a;--panel:#1f1a22;--ink:#f1e6da;--muted:#a8978b;--line:#352d36;--accent:#f08a5d;color-scheme:dark}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 var(--body);
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+main{max-width:720px;margin:0 auto;padding-block:clamp(40px,10vh,96px) 64px}
+h1{font:700 clamp(40px,8vw,64px)/1 var(--display);letter-spacing:-.02em;margin:0;text-wrap:balance}
+.sub{color:var(--muted);margin:10px 0 40px;font-size:16px}
+ol{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+li{border-bottom:1px solid var(--line)}
+a.trip,div.trip{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 16px;align-items:baseline;padding:20px 8px;color:inherit;text-decoration:none;border-radius:8px}
+a.trip:hover{background:var(--panel)}
+a.trip:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.name{font:500 24px/1.2 var(--display)}
+.where{color:var(--muted)}
+.meta{grid-column:1/-1;font:13px var(--mono);color:var(--muted);font-variant-numeric:tabular-nums;display:flex;gap:16px;flex-wrap:wrap}
+.go{font:500 13px var(--mono);color:var(--accent);white-space:nowrap}
+.soon .name{color:var(--muted)}
+.soon .go{color:var(--muted)}
+footer{margin-top:40px;color:var(--muted);font-size:13px}
+</style></head><body><main>
+<h1>Corrientes Rides</h1><p class="sub">Argentina · The map for this trip hasn’t been added yet.</p>
+<footer><a class="go" href="../">← All trips</a></footer>
+</main></body></html>
