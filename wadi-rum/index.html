@@ -842,11 +842,11 @@ function build(){
       L.polyline(t.pts.map(p=>[p[1],p[0]]),{color:css('--casing'),weight:w+2.5,opacity:dim?.25:.7}).addTo(g);
       L.polyline(t.pts.map(p=>[p[1],p[0]]),{color:css(dayVar(t.id)),weight:w,opacity:op}).addTo(g);
     }else if(mode==='gait'){
-      const gw=isSel?7:5;
+      const gw=w;
       L.polyline(t.pts.map(p=>[p[1],p[0]]),{color:css('--casing'),weight:gw+2.5,opacity:dim?.25:.7}).addTo(g);
       runs(t.pts,p=>p[5]||'H').forEach(r=>L.polyline(r.pts,{color:css(GAITS.find(x=>x[0]===r.k)[2]),weight:gw,opacity:op}).addTo(g));
     }else{
-      const ew=isSel?7:5;
+      const ew=w;
       L.polyline(t.pts.map(p=>[p[1],p[0]]),{color:css('--casing'),weight:ew+2.5,opacity:dim?.25:.7}).addTo(g);
       runs(t.pts,p=>Math.round((p[2]-EMIN)/(EMAX-EMIN)*20)).forEach(r=>L.polyline(r.pts,{color:eleColor(EMIN+r.k/20*(EMAX-EMIN)),weight:ew,opacity:op}).addTo(g));
     }
