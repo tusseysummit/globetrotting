@@ -846,7 +846,9 @@ function build(){
       L.polyline(t.pts.map(p=>[p[1],p[0]]),{color:css('--casing'),weight:gw+2.5,opacity:dim?.25:.7}).addTo(g);
       runs(t.pts,p=>p[5]||'H').forEach(r=>L.polyline(r.pts,{color:css(GAITS.find(x=>x[0]===r.k)[2]),weight:gw,opacity:op}).addTo(g));
     }else{
-      runs(t.pts,p=>Math.round((p[2]-EMIN)/(EMAX-EMIN)*20)).forEach(r=>L.polyline(r.pts,{color:eleColor(EMIN+r.k/20*(EMAX-EMIN)),weight:w,opacity:op}).addTo(g));
+      const ew=isSel?7:5;
+      L.polyline(t.pts.map(p=>[p[1],p[0]]),{color:css('--casing'),weight:ew+2.5,opacity:dim?.25:.7}).addTo(g);
+      runs(t.pts,p=>Math.round((p[2]-EMIN)/(EMAX-EMIN)*20)).forEach(r=>L.polyline(r.pts,{color:eleColor(EMIN+r.k/20*(EMAX-EMIN)),weight:ew,opacity:op}).addTo(g));
     }
     const s=t.pts[0],e=t.pts[t.pts.length-1];
     L.circleMarker([s[1],s[0]],{radius:isSel?6:4,color:css('--panel'),weight:2,fillColor:css(dayVar(t.id)),fillOpacity:1,opacity:dim?.4:1})
